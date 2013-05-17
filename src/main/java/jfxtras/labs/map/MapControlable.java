@@ -74,6 +74,4 @@ public interface MapControlable {
     int getMapX();
 
     int getMapY();
-
-    void setCursorLocationVisible(boolean val);
 }

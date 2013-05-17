@@ -35,7 +35,7 @@ import javafx.scene.image.Image;
  * @author Mario Schroeder
  *
  */
-public class TilesProvider implements TileCacheable{
+public class TilesProvider implements TileCacheable {
 
     private TileSource tileSource;
 
@@ -78,7 +78,8 @@ public class TilesProvider implements TileCacheable{
     }
 
     /**
-     * Checks the expiration of images in the cache, and removes them eventually.
+     * Checks the expiration of images in the cache, and removes them
+     * eventually.
      *
      * @param location
      */
@@ -136,7 +137,7 @@ public class TilesProvider implements TileCacheable{
 
         @Override
         public void changed(
-            ObservableValue<? extends Boolean> ov, Boolean oldVal, Boolean newVal) {
+                ObservableValue<? extends Boolean> ov, Boolean oldVal, Boolean newVal) {
             if (newVal.booleanValue()) {
                 addImage(location, tile.getImageView().getImage());
             }
