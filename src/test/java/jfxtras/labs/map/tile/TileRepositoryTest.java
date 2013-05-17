@@ -19,7 +19,7 @@ public class TileRepositoryTest {
     @Test
     public void testWithNull(){
         
-        TileRepository classUnderTest = new TileRepository(null);
+        TilesProvider classUnderTest = new TilesProvider(null);
 		Tile tile = classUnderTest.getTile(1, 1, 1);
 		assertNull(tile);
     }
@@ -53,7 +53,7 @@ public class TileRepositoryTest {
 	public void testWithIllegalArgs() {
         
 		TileSourceFactory<String> factory = new LocalTileSourceFactory();
-		TileRepository classUnderTest = new TileRepository(factory.create());
+		TilesProvider classUnderTest = new TilesProvider(factory.create());
 		Tile tile = classUnderTest.getTile(-1, 0, 0);
 		assertNull(tile);
 		tile = classUnderTest.getTile(0, -1, 0);
@@ -62,7 +62,7 @@ public class TileRepositoryTest {
 
 	private void verify(TileSource tileSource) {
         
-		TileRepository classUnderTest = new TileRepository(tileSource);
+		TilesProvider classUnderTest = new TilesProvider(tileSource);
 		Tile tile = classUnderTest.getTile(1, 1, 1);
 		assertNotNull(tile);
 		assertEquals(tileSource, classUnderTest.getTileSource());

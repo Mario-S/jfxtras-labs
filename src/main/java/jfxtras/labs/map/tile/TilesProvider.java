@@ -29,13 +29,13 @@ import javafx.beans.value.ObservableValue;
 import javafx.scene.image.Image;
 
 /**
- * A repository for the map tiles.
+ * The provider of the map tiles.
  *
  * @author jsmith.carlsbad@gmail.com
  * @author Mario Schroeder
  *
  */
-public class TileRepository implements TileCacheable{
+public class TilesProvider implements TileCacheable{
 
     private TileSource tileSource;
 
@@ -48,7 +48,7 @@ public class TileRepository implements TileCacheable{
      */
     public static final long DEFAULT_EXPIRE = 60 * 60 * 1000;
 
-    public TileRepository(TileSource source) {
+    public TilesProvider(TileSource source) {
         tileSource = source;
         cache = new ConcurrentHashMap<>();
         expire = DEFAULT_EXPIRE;

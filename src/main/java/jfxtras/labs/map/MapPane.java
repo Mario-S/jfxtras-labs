@@ -49,7 +49,7 @@ import javafx.scene.text.FontSmoothingType;
 import javafx.scene.text.Text;
 import jfxtras.labs.map.render.TileRenderer;
 import jfxtras.labs.map.tile.TileCacheable;
-import jfxtras.labs.map.tile.TileRepository;
+import jfxtras.labs.map.tile.TilesProvider;
 
 /**
  * 
@@ -151,7 +151,7 @@ public final class MapPane extends Pane implements MapControlable {
 
 		mapMarkersVisible = new SimpleBooleanProperty(true);
 
-		TileCacheable tileCache = new TileRepository(tileSource);
+		TileCacheable tileCache = new TilesProvider(tileSource);
 		tileRenderer = new TileRenderer(tileCache);
 
 		mapMarkerList = new ArrayList<>();
